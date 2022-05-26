@@ -13,10 +13,10 @@ class LoginPage extends StatelessWidget {
               "assets/images/undraw_Mobile_login_re_9ntv.png",
               fit: BoxFit.cover,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
-            Text(
+            const Text(
               "Welcome",
               style: TextStyle(
                 fontSize: 24,
@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
                 color: Colors.green,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Padding(
@@ -33,23 +33,23 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: "Enter username", labelText: "username"),
                   ),
                   TextFormField(
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: "Enter password", labelText: "password"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
                   ElevatedButton(
                     onPressed: () {
                       print("logged in");
                     },
-                    child: Text('Login'),
                     style: TextButton.styleFrom(),
+                    child: const Text('Login'),
                   )
                 ],
               ),
