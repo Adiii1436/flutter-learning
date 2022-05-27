@@ -6,12 +6,12 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
+    const imageUrl =
         "https://images.squarespace-cdn.com/content/v1/55951ce0e4b0c1a90569cfed/1584542431563-VU5W1ZPY4E8J9WZ8BX4C/dale-edwin-murray-illustration-illustrator-freelance-magazine-editorial-revolt-portrait-3.jpg?format=1000w";
 
     return Drawer(
       child: Container(
-          color: Colors.lightBlue,
+          color: Colors.black87,
           child: ListView(
             children: [
               DrawerHeader(
@@ -19,8 +19,8 @@ class MyDrawer extends StatelessWidget {
                   child: UserAccountsDrawerHeader(
                     margin: EdgeInsets.zero,
                     decoration: BoxDecoration(
-                      color: Colors.lightBlue,
-                    ),
+                        // * color: Colors.lightBlue,
+                        ),
                     accountName: Text(
                       'Aditya Anand',
                       style: TextStyle(
