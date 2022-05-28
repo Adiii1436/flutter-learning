@@ -39,6 +39,14 @@
             "price": "500",
             "color": "#33505a",
             "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MKUQ3_VW_34FR+watch-45-alum-midnight-nc-7s_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1632171067000%2C1631661671000"
+        },
+        {
+            "id": 6,
+            "name": "Apple imac",
+            "desc": "Apple imac 13th generation",
+            "price": "800",
+            "color": "#33505a",
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/imac-24-blue-cto-hero-202104?wid=627&hei=566&fmt=jpeg&qlt=95&.v=1617479508000"
         }
     ]
 }
