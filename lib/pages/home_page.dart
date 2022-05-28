@@ -3,12 +3,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/widgets/drawer.dart';
 import 'package:myapp/widgets/item_widget.dart';
 import 'package:myapp/widgets/themes.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -108,14 +108,50 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
         child: Row(
       children: [
-        Image.asset(catalog.image)
-            .box
-            .rounded
-            .p12
-            .color(MyTheme.creamColor)
-            .make()
-            .p16()
+        CatalogImage(image: catalog.image),
+        Expanded(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                catalog.name.text.lg.bold.make(),
+                catalog.desc.text.textStyle(context.captionStyle).make(),
+                ButtonBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    "\$${catalog.price}".text.bold.xl.make(),
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.teal),
+                            shape: MaterialStateProperty.all(StadiumBorder())),
+                        child: "Buy".text.white.make())
+                  ],
+                )
+              ]),
+        )
       ],
     )).white.rounded.square(150).make().py16();
+  }
+}
+
+class CatalogImage extends StatelessWidget {
+  final String image;
+  const CatalogImage({
+    Key? key,
+    required this.image,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(image)
+        .box
+        .rounded
+        .p12
+        .color(MyTheme.creamColor)
+        .make()
+        .p12()
+        .w40(context);
   }
 }
