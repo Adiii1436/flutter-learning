@@ -16,13 +16,13 @@ class ItemWidget extends StatelessWidget {
         leading: Image.network(item!.image),
         title: Text(
           item!.name,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(item!.desc),
         trailing: Text(
           '\$${item!.price}',
-          style:
-              TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+              color: Colors.blueAccent, fontWeight: FontWeight.bold),
         ),
       ),
     );

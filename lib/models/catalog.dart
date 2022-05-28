@@ -1,3 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
+class CatalogModel {
+  static List<Item> items = [];
+}
+
 class Item {
   final int id;
   final String name;
@@ -6,12 +13,85 @@ class Item {
   final String color;
   final String image;
 
-  Item(this.id, this.name, this.desc, this.price, this.color, this.image);
-}
+  Item(
+    this.id,
+    this.name,
+    this.desc,
+    this.price,
+    this.color,
+    this.image,
+  );
 
-class CatalogModel {
-  static final items = [
-    Item(1, 'iPhone 13 Pro', 'Apple iphone 13th generation', '900', '#33505a',
-        "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=470&hei=556&fmt=png-alpha&.v=1644969385433"),
-  ];
+  Item copyWith({
+    int? id,
+    String? name,
+    String? desc,
+    String? price,
+    String? color,
+    String? image,
+  }) {
+    return Item(
+      id ?? this.id,
+      name ?? this.name,
+      desc ?? this.desc,
+      price ?? this.price,
+      color ?? this.color,
+      image ?? this.image,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'desc': desc,
+      'price': price,
+      'color': color,
+      'image': image,
+    };
+  }
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      map['id'] as int,
+      map['name'] as String,
+      map['desc'] as String,
+      map['price'] as String,
+      map['color'] as String,
+      map['image'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Item.fromJson(String source) =>
+      Item.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Item &&
+        other.id == id &&
+        other.name == name &&
+        other.desc == desc &&
+        other.price == price &&
+        other.color == color &&
+        other.image == image;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        name.hashCode ^
+        desc.hashCode ^
+        price.hashCode ^
+        color.hashCode ^
+        image.hashCode;
+  }
 }
