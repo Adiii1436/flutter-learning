@@ -1,28 +1,12 @@
 {
     "products": [
         {
-            "id": 1,
-            "name": "iPhone 13 Pro",
-            "desc": "Apple iphone 13th generation",
-            "price": "900",
-            "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=470&hei=556&fmt=png-alpha&.v=1644969385433"
-        },
-        {
             "id": 2,
             "name": "Macbook Pro 2021",
             "desc": "Apple macbook 13th generation",
             "price": "1500",
             "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_US?wid=640&hei=595&fmt=jpeg&qlt=95&.v=1632948875000"
-        },
-        {
-            "id": 3,
-            "name": "iPad mini",
-            "desc": "Apple ipad 13th generation",
-            "price": "600",
-            "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-mini-select-wifi-starlight-202109?wid=470&hei=556&fmt=png-alpha&.v=1629840745000"
+            "image": "/home/aaditya/Aditya/fprojects/flutter/myapp/assets/images/mbp-spacegray-gallery2-202011_GEO_US-removebg-preview.png"
         },
         {
             "id": 4,
@@ -30,7 +14,7 @@
             "desc": "Apple airpods 13th generation",
             "price": "300",
             "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MME73?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1632861342000"
+            "image": "/home/aaditya/Aditya/fprojects/flutter/myapp/assets/images/MME73-removebg-preview.png"
         },
         {
             "id": 5,
@@ -38,7 +22,7 @@
             "desc": "Apple watch 13th generation",
             "price": "500",
             "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MKUQ3_VW_34FR+watch-45-alum-midnight-nc-7s_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1632171067000%2C1631661671000"
+            "image": "/home/aaditya/Aditya/fprojects/flutter/myapp/assets/images/MN1L3ref_VW_34FR+watch-45-alum-starlight-nc-7s_VW_34FR_WF_CO-removebg-preview.png"
         },
         {
             "id": 6,
@@ -46,7 +30,7 @@
             "desc": "Apple imac 13th generation",
             "price": "800",
             "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/imac-24-blue-cto-hero-202104?wid=627&hei=566&fmt=jpeg&qlt=95&.v=1617479508000"
+            "image": "/home/aaditya/Aditya/fprojects/flutter/myapp/assets/images/imac-24-pink-selection-hero-202104-removebg-preview.png"
         }
     ]
 }
