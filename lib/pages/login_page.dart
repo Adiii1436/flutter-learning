@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/utlx/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
