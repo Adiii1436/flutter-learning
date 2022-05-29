@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:myapp/utlx/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:myapp/models/catalog.dart';
-import 'package:myapp/widgets/themes.dart';
 
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
@@ -44,13 +43,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(8, (index) => CatalogModel.items[0]);
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, MyRoute.cartRoute);
         },
         backgroundColor: Colors.lightBlue,
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+        ),
       ).p12(),
       body: SafeArea(
         child: Container(

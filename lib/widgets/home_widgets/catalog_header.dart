@@ -12,11 +12,14 @@ class CatalogHeader extends StatelessWidget {
       children: [
         Text(
           'Catalog App',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: context.accentColor),
         ),
         Text(
           "Trending Products",
-          style: TextStyle(fontSize: 15.5),
+          style: TextStyle(fontSize: 15.5, color: context.accentColor),
         )
       ],
     );
