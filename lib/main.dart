@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routeInformationParser: VxInformationParser(),
       routerDelegate: VxNavigator(routes: {
-        "/": (_, __) => MaterialPage(child: const HomePage()),
-        MyRoute.homeRoute: (_, __) => MaterialPage(child: const HomePage()),
+        "/": (_, __) => const MaterialPage(child: HomePage()),
+        MyRoute.homeRoute: (_, __) => const MaterialPage(child: HomePage()),
         MyRoute.homeDetailsRoute: (uri, _) {
           final catalog = (VxState.store as MyStore)
               .catalog
@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
             catalog: catalog,
           ));
         },
-        MyRoute.loginRoute: (_, __) => MaterialPage(child: const LoginPage()),
-        MyRoute.cartRoute: (_, __) => MaterialPage(child: const CartPage()),
+        MyRoute.loginRoute: (_, __) => const MaterialPage(child: LoginPage()),
+        MyRoute.cartRoute: (_, __) => const MaterialPage(child: CartPage()),
       }),
       // initialRoute: MyRoute.homeRoute,
       // routes: {
