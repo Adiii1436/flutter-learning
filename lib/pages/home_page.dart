@@ -4,12 +4,16 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myapp/core/store.dart';
+import 'package:myapp/models/cart.dart';
 import 'package:myapp/utlx/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:myapp/models/catalog.dart';
 
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
+
+// import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,19 +45,28 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     // final dummyList = List.generate(8, (index) => CatalogModel.items[0]);
     return Scaffold(
       backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, MyRoute.cartRoute);
-        },
-        backgroundColor: Colors.lightBlue,
-        child: Icon(
-          CupertinoIcons.cart,
-          color: Colors.white,
-        ),
-      ).p12(),
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (context, _, __) => FloatingActionButton(
+          onPressed: () {
+            context.vxNav.push(Uri.parse(MyRoute.cartRoute));
+          },
+          backgroundColor: Colors.lightBlue,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+        ).badge(
+            color: Vx.pink500,
+            size: 20,
+            count: _cart.items.length,
+            textStyle:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+      ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(15),

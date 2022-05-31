@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       });
 
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoute.homeRoute);
+      await context.vxNav.push(Uri.parse(MyRoute.homeRoute));
       setState(() {
         changeButton = false;
       });

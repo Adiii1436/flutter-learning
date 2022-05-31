@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:myapp/utlx/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:myapp/pages/home_detail_page.dart';
 import '../../models/catalog.dart';
@@ -11,19 +12,35 @@ class CatalogList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) {
-          final catalog = CatalogModel.items[index];
-          return InkWell(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: ((context) =>
-                          HomeDetailPage(catalog: catalog)))),
-              child: CatalogItem(catalog: catalog));
-        });
+    return !context.isMobile
+        ? GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            shrinkWrap: true,
+            itemCount: CatalogModel.items.length,
+            itemBuilder: (context, index) {
+              final catalog = CatalogModel.items[index];
+              return InkWell(
+                  onTap: () => context.vxNav.push(
+                      Uri(
+                          path: MyRoute.homeDetailsRoute,
+                          queryParameters: {"id": catalog.id.toString()}),
+                      params: catalog),
+                  child: CatalogItem(catalog: catalog));
+            })
+        : ListView.builder(
+            shrinkWrap: true,
+            itemCount: CatalogModel.items.length,
+            itemBuilder: (context, index) {
+              final catalog = CatalogModel.items[index];
+              return InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) =>
+                              HomeDetailPage(catalog: catalog)))),
+                  child: CatalogItem(catalog: catalog));
+            });
   }
 }
 
