@@ -3,8 +3,8 @@ import 'package:myapp/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MyStore extends VxStore {
-  CatalogModel catalog;
-  CartModel cart;
+  late CatalogModel catalog;
+  late CartModel cart;
 
   MyStore() {
     catalog = CatalogModel();
