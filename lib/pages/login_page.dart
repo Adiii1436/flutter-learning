@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
 
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await context.vxNav.push(Uri.parse(MyRoute.homeRoute));
       setState(() {
         changeButton = false;
@@ -100,16 +100,16 @@ class _LoginPageState extends State<LoginPage> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   'login',
                                   style: TextStyle(
                                     color: Colors.white,

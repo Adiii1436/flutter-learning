@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:myapp/core/store.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';

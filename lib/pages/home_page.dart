@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     final catalogjson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogjson);
@@ -45,38 +45,38 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = (VxState.store as MyStore).cart;
+    final cart = (VxState.store as MyStore).cart;
     // final dummyList = List.generate(8, (index) => CatalogModel.items[0]);
     return Scaffold(
       backgroundColor: context.canvasColor,
       floatingActionButton: VxBuilder(
-        mutations: {AddMutation, RemoveMutation},
+        mutations: const {AddMutation, RemoveMutation},
         builder: (context, _, __) => FloatingActionButton(
           onPressed: () {
             context.vxNav.push(Uri.parse(MyRoute.cartRoute));
           },
           backgroundColor: Colors.lightBlue,
-          child: Icon(
+          child: const Icon(
             CupertinoIcons.cart,
             color: Colors.white,
           ),
         ).badge(
             color: Vx.pink500,
             size: 20,
-            count: _cart.items.length,
-            textStyle:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            count: cart.items.length,
+            textStyle: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.white)),
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            CatalogHeader(),
+            const CatalogHeader(),
             if (CatalogModel.items.isNotEmpty)
-              CatalogList().py16().expand()
+              const CatalogList().py16().expand()
             else
-              CircularProgressIndicator().centered().py16().expand()
+              const CircularProgressIndicator().centered().py16().expand()
           ]),
         ),
       ),

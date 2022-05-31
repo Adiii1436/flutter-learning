@@ -9,7 +9,7 @@ class MyTheme {
       canvasColor: MyTheme.creamColor,
       accentColor: Colors.black,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
       ));
@@ -21,13 +21,13 @@ class MyTheme {
       canvasColor: Vx.gray900,
       accentColor: Colors.white,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: Colors.black,
         elevation: 0.0,
       ));
 
   //colors
-  static Color creamColor = Color(0xfff5f5f5);
+  static Color creamColor = const Color(0xfff5f5f5);
   static Color darkgrey = Vx.gray100;
-  static Color darkBulish = Color.fromARGB(255, 6, 6, 129);
+  static Color darkBulish = const Color.fromARGB(255, 6, 6, 129);
 }

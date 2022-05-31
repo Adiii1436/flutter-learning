@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routeInformationParser: VxInformationParser(),
       routerDelegate: VxNavigator(routes: {
-        "/": (_, __) => MaterialPage(child: const LoginPage()),
+        "/": (_, __) => MaterialPage(child: const HomePage()),
         MyRoute.homeRoute: (_, __) => MaterialPage(child: const HomePage()),
         MyRoute.homeDetailsRoute: (uri, _) {
           final catalog = (VxState.store as MyStore)
